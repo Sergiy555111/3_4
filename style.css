@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: black;
+    position: relative;
+    background: red;
+    background: linear-gradient(45deg, #d2ffde, #ceefff, #ded1ff);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0;
+    font-family: "Heebo", sans-serif;
+    background: url(./assets/Parkscene_Background.png) center bottom repeat-x, url(./assets/SkyDay.png) center top / cover;
+    text-align: center;
+    user-select: none;
+}
+
+.catch_screen {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(45deg, #d2ffde, #ceefff, #ded1ff);
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: .4;
+}
+
+.control {
+    width: 320px;
+    height: 260px;
+    position: relative;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playground {
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-around;
+    margin: 30px auto;
+}
+
+.pokemon {
+    text-align: center;
+    position: relative;
+    width: 180px;
+    height: 260px;
+    min-width: 150px;
+    margin: 20px;
+    background-image: url(./assets/card.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.pokemon::before {
+    content: "";
+    display: block;
+    position: absolute;
+    opacity: 0.5;
+    transition: all 0.5s ease;
+    width: 76%;
+    height: 53%;
+    left: 12%;
+    top: 47%;
+    transform: translateY(-50%);
+    background-image: url(./assets/pockeball.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.pokemon * {
+    vertical-align: middle;
+}
+
+.pokemon .lvl {
+    color: #00b8ff;
+    position: absolute;
+    left: 24px;
+    top: 16px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.pokemon .sprite {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-width: 100px;
+}
+
+.pokemon .details {
+    position: absolute;
+    top: 65%;
+    left: 0;
+    right: 0;
+}
+
+.pokemon .details .name {
+    font-size: 20px;
+    font-weight: 400;
+    color: #222;
+    margin: 4px 0;
+    display: inline-block;
+}
+
+.pokemon .details .hp {
+    width: 60%;
+    margin: auto;
+}
+
+.pokemon .details .hp .text {
+    color: #666;
+    display: inline-block;
+    padding-top: 4px;
+    font-size: 14px;
+}
+
+.pokemon .details .hp .bar {
+    border-radius: 50px;
+    background: #073fa7;
+    border: 3.5px solid #00a3e2;
+    height: 18px;
+    overflow: hidden;
+}
+
+.pokemon .details .hp .bar .health {
+    width: 50%;
+    height: 100%;
+    background: -webkit-gradient(linear, left top, right top, from(lime), to(#8bf500));
+    background: linear-gradient(to right, lime, #8bf500);
+}
+
+.pokemon .details .hp .bar .health.low {
+    background: -webkit-gradient(linear, left top, right top, from(#ffcc00), to(#f1f500));
+    background: linear-gradient(to right, #ffcc00, #f1f500);
+}
+
+.pokemon .details .hp .bar .health.critical {
+    background: -webkit-gradient(linear, left top, right top, from(#d20000), to(#f51700));
+    background: linear-gradient(to right, #d20000, #f51700);
+}
+
+.button {
+    position: relative;
+    background: white;
+    border: 2px solid #ffc55b;
+    border-radius: 10px;
+    min-height: 30px;
+    vertical-align: middle;
+    padding: 12px 20px;
+    outline: none !important;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.button:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffd78e), to(#ffc55b));
+    background: linear-gradient(to bottom, #ffd78e, #ffc55b);
+    border-color: white;
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+body, html {
+    min-height: 100%;
+    text-align: center;
+}
+
+.logo {
+    max-width: 240px;
+    margin: 30px 20px 0;
+}
+
+.body {
+    position: relative;
+    z-index: 1;
+}
+
+#logs {
+    max-width: 720px;
+    margin: 20px auto 40px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.88);
+    border: 2px solid #3b4cca;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-height: 220px;
+    overflow-y: auto;
+    text-align: left;
+}
+
+#logs p {
+    font-size: 14px;
+    color: #222;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    line-height: 1.4;
+    margin: 0;
+}
+
+#logs p:first-child {
+    font-weight: bold;
+    color: #073fa7;
+}
